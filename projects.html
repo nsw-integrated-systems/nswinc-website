@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NSW Integrated Systems project portfolio — access control, video surveillance, structured cabling, sound masking, overhead paging, and systems integration across Southern California." />
+  <title>Projects | NSW Integrated Systems</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    .projects-intro {
+      max-width: 680px;
+      margin: 0 auto 40px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+    .project-card { cursor: default; }
+    .project-thumb { position: relative; overflow: hidden; }
+    .project-thumb img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .project-card:hover .project-thumb img { transform: scale(1.06); }
+    .project-cat {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--font-head);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      z-index: 2;
+    }
+    .project-info { padding: 20px; }
+    .project-info h3 { font-size: .97rem; margin-bottom: 6px; color: var(--primary); }
+    .project-info .project-client {
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: var(--font-head);
+      letter-spacing: .04em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .project-info p { font-size: .85rem; color: var(--text-muted); line-height: 1.6; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .project-tag {
+      font-size: .7rem;
+      font-family: var(--font-head);
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--light);
+      color: var(--secondary);
+      border: 1px solid var(--border);
+    }
+    .sector-strip {
+      background: var(--light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+    }
+    .sector-strip h3 { margin-bottom: 24px; color: var(--primary); }
+    .sector-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .sector-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 30px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      font-family: var(--font-head);
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--primary);
+      box-shadow: 0 2px 8px rgba(27,58,107,.06);
+    }
+    .sector-pill i { color: var(--accent); }
+    /* hide filter mismatch */
+    .project-card.hidden { display: none; }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ─────────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html"><img src="assets/nsw-logo.png" alt="NSW Integrated Systems" class="nav-logo" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="btn btn-primary">Get a Quote</a></li>
+    </ul>
+    <div class="hamburger" aria-label="Menu"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="team.html">Team</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary btn-lg">Get a Quote</a>
+</div>
+
+<!-- ── Hero ───────────────────────────────────────────────── -->
+<section class="hero-sm">
+  <div class="hero-pattern"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <span class="section-label" style="color:var(--accent);">Our Work</span>
+    <h1>Project Portfolio</h1>
+    <p>From healthcare campuses to transit infrastructure and federal facilities — NSW delivers integrated systems that perform.</p>
+  </div>
+</section>
+
+<!-- ── Sectors We Serve ────────────────────────────────────── -->
+<div class="sector-strip">
+  <div class="container">
+    <h3 style="font-size:1.1rem;margin-bottom:20px;">Industries We Serve</h3>
+    <div class="sector-list">
+      <div class="sector-pill"><i class="fa-solid fa-hospital"></i> Healthcare</div>
+      <div class="sector-pill"><i class="fa-solid fa-train"></i> Transit &amp; Transportation</div>
+      <div class="sector-pill"><i class="fa-solid fa-building-columns"></i> Government &amp; Federal</div>
+      <div class="sector-pill"><i class="fa-solid fa-graduation-cap"></i> K-12 Education</div>
+      <div class="sector-pill"><i class="fa-solid fa-university"></i> Higher Education</div>
+      <div class="sector-pill"><i class="fa-solid fa-building"></i> Commercial</div>
+      <div class="sector-pill"><i class="fa-solid fa-flask"></i> Life Sciences</div>
+      <div class="sector-pill"><i class="fa-solid fa-satellite-dish"></i> Defense &amp; Aerospace</div>
+      <div class="sector-pill"><i class="fa-solid fa-bolt"></i> Utilities &amp; Energy</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Project Grid ────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <p class="projects-intro">The following represents a cross-section of completed and active projects. Client confidentiality is respected — detailed project information is available upon request.</p>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="access-control">Access Control</button>
+      <button class="filter-btn" data-filter="video">Video Surveillance</button>
+      <button class="filter-btn" data-filter="cabling">Structured Cabling</button>
+      <button class="filter-btn" data-filter="sound">Sound Masking &amp; Paging</button>
+      <button class="filter-btn" data-filter="integration">Systems Integration</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- 1 — Sharp Healthcare Enterprise Access Control -->
+      <div class="project-card fade-in" data-category="access-control">
+        <div class="project-thumb">
+          <span class="project-cat">Access Control</span>
+          <img src="assets/images/access-control-overlay.png" alt="Sharp Healthcare Access Control" />
+        </div>
+        <div class="project-info">
+          <div class="project-client">Sharp HealthCare</div>
+          <h3>Enterprise Access Control — Multi-Campus PACS</h3>
+          <p>Design, installation, and ongoing service of a Software House C•CURE 9000 enterprise access control platform spanning multiple Sharp facilities across San Diego. Includes HID card issuance, reader upgrades, and Ambient AI integration.</p>
+          <div class="project-tags">
+            <span class="project-tag">C•CURE 9000</span>
+            <span class="project-tag">HID</span>
+            <span class="project-tag">Multi-Site</span>
+            <span class="project-tag">Healthcare</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 — Scripps Health IP Video -->
+      <div class="project-card fade-in" data-category="video">
+        <div class="project-thumb">
+          <span class="project-cat">Video Surveillance</span>
+          <img src="assets/images/video-surveillance-new.png" alt="Scripps Health Video Surveillance" />
+        </div>
+        <div class="project-info">
+          <div class="project-client">Scripps Health</div>
+          <h3>IP Video Surveillance — Multi-Site Camera Expansion</h3>
+          <p>Ongoing IP camera additions, VMS integration, and video infrastructure upgrades across Scripps Green, Scripps Mercy, and Scripps Downtown facilities. Projects include parking structure cameras, lobby coverage, and elevator monitoring.</p>
+          <div class="project-tags">
+            <span class="project-tag">IP Video</span>
+            <span class="project-tag">VMS</span>
+            <span class="project-tag">Multi-Campus</span>
+            <span class="project-tag">Healthcare</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 — NCTD Batiquitos Lagoon Fiber -->
+      <div class="project-card fade-in" data-category="cabling">
+        <div class="project-thumb">
+          <span class="project-cat">Structured Cabling</span>
+          <img src="assets/images/cabling-new.png" alt="NCTD Fiber Reroute" />
+        </div>
+        <div class="project-info">
+          <div class="project-client">NCTD — North County Transit District</div>
+          <h3>Batiquitos Lagoon — Fiber Optic Reroute</h3>
+          <p>Design and installation of a fiber optic reroute along the Batiquitos Lagoon rail corridor. Work includes OSP fiber installation, splice and termination, and full communications restoration for NCTD's Coaster line infrastructure.</p>
+          <div class="project-tags">
+            <span class="project-tag">OSP Fiber</span>
+            <span class="project-tag">Transit</span>
+            <span class="project-tag">Rail Corridor</span>
+            <span class="project-tag">MOP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 — Sharp Paging -->
+      <div class="project-card fade-in" data-category="sound">
+        <div class="project-thumb">
+          <span class="project-cat">Sound Masking &amp; Overhead Paging</span>
+          <img src="assets/images/sound-signal.jpg" alt="Sharp Healthcare Paging System" />
+        </div>
+        <div class="project-info">
+          <div class="project-client">Sharp HealthCare</div>
+          <h3>Overhead Paging System — Multi-Facility T&amp;M Program</h3>
+          <p>Ongoing overhead paging service program across Sharp Metro, Sharp Memorial, Sharp Santee, and Sharp Cancer Center. Scope includes PBX paging troubleshooting, speaker repairs, ED pod audio, and mass notification maintenance under IBEW DAS-7 classification using Biamp-platform infrastructure.</p>
+          <div class="project-tags">
+            <span class="project-tag">DAS-7</span>
+            <span class="project-tag">Biamp</span>
+            <span class="project-tag">Overhead Paging</span>
+            <span class="project-tag">Healthcare</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 — Kaiser Permanente Access Control -->
+      <div class="project-card fade-in" data-category="access-control">
+        <div class="project-thumb">
+          <span class="project-cat">Access Control</span>
+          <img src="assets/images/access-control-overlay.png" alt="Kaiser Permanente Access Control" />
+        </div>
+        <div class="project-info">
+          <div class="project-client">Kaiser Permanente</div>
+          <h3>Access Control Expansion — Multi-Location Card Reader Program</h3>
+          <p>Multi-phase access control expansion program across Kaiser Permanente facilities in San Diego County. Work includes credential reader upgrades, door controller additions, and Software House PACS integration.</p>
+          <div class="project-tags">
+            <span class="project-tag">Software House</span>
+            <span class="project-tag">Card Readers</span>
+            <span class="project-tag">Healthcare</span>
+            <span class="project-tag">Multi-Phase</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 — Imperial Irrigation District -->
+      <div class="project-card fade-in" data-category="access-control">
+        <div class="project-thumb">
+          <span class="project-cat">Access Control</span>
+          <img src="assets/images/ai-analytics.jpg" alt="Imperial Irrigation District PACS" />
+        </div>
+        <div class="project-info">
+          <div class="project-client">Imperial Irrigation District</div>
+          <h3>Enterprise PACS — Lenel S2 Platform</h3>
+          <p>Enterprise physical access control system for IID's utility and critical infrastructure facilities. Multi-phase program including Lenel hardware, HID ALX readers, controller boards, and HID credential issuance.</p>
+          <div class="project-tags">
+            <span class="project-tag">Lenel S2</span>
+            <span class="project-tag">Lenel</span>
+            <span class="project-tag">Utilities</span>
+            <span class="project-tag">HID</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 — SDIA On-Call LV & Fiber -->
+      <div class="project-card fade-in" data-category="cabling">
+        <div class="project-thumb">
+          <span class="project-cat">Structured Cabling</span>
+          <img src="assets/images/cabling-new.png" alt="San Diego International Airport Fiber" />
+        </div>
+        <div class="project-info">
+          <div class="project-client">San Diego International Airport (SDIA)</div>
+          <h3>On-Call Low Voltage &amp; Fiber Optic Services</h3>
+          <p>On-call contract for low-voltage and fiber optic services at San Diego International Airport. Scope includes fiber troubleshooting, cabling infrastructure support, and systems integration under a standing service agreement.</p>
+          <div class="project-tags">
+            <span class="project-tag">On-Call Contract</span>
+            <span class="project-tag">Fiber Optic</span>
+            <span class="project-tag">Airport</span>
+            <span class="project-tag">LV Infrastructure</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 — Viasat Video & Access Control -->
+      <div class="project-card fade-in" data-category="integration">
+        <div class="project-thumb">
+          <span class="project-cat">Systems Integration</span>
+          <img src="assets/images/video-surveillance-new.png" alt="Viasat Systems Integration" />
+        </div>
+        <div class="project-info">
+          <div class="project-client">Viasat</div>
+          <h3>Video &amp; Access Control Integration — Defense Campus</h3>
+          <p>Multi-phase security systems integration at Viasat's defense technology campus. Scope includes Lenel S2 camera license expansion, IP video infrastructure, and access control integration for secure facility operations.</p>
+          <div class="project-tags">
+            <span class="project-tag">Lenel S2</span>
+            <span class="project-tag">IP Video</span>
+            <span class="project-tag">Defense</span>
+            <span class="project-tag">Systems Integration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 — Illumina Reader Migration -->
+      <div class="project-card fade-in" data-category="access-control">
+        <div class="project-thumb">
+          <span class="project-cat">Access Control</span>
+          <img src="assets/images/access-control-overlay.png" alt="Illumina Card Reader Migration" />
+        </div>
+        <div class="project-info">
+          <div class="project-client">Illumina</div>
+          <h3>HID iClass to SEOS Reader Migration — Corporate HQ</h3>
+          <p>Multi-phase access control upgrade at Illumina's San Diego headquarters. Program included HID iClass reader replacement, SEOS 8K smart card deployment, mobile credential integration, and C•CURE 9000 PACS configuration for the life sciences campus.</p>
+          <div class="project-tags">
+            <span class="project-tag">HID SEOS</span>
+            <span class="project-tag">C•CURE 9000</span>
+            <span class="project-tag">Life Sciences</span>
+            <span class="project-tag">Mobile Credential</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 — BNBuilders Systems Integration -->
+      <div class="project-card fade-in" data-category="integration">
+        <div class="project-thumb">
+          <span class="project-cat">Systems Integration</span>
+          <img src="assets/images/ai-analytics.jpg" alt="BNBuilders Systems Integration" />
+        </div>
+        <div class="project-info">
+          <div class="project-client">BNBuilders</div>
+          <h3>Multi-Phase Integrated Systems — GC Partnership</h3>
+          <p>Ongoing integrated systems subcontract with BNBuilders across multiple active construction projects in San Diego. NSW provides access control, video, and low-voltage infrastructure as part of the GC's project delivery team.</p>
+          <div class="project-tags">
+            <span class="project-tag">GC Partnership</span>
+            <span class="project-tag">Access Control</span>
+            <span class="project-tag">Video</span>
+            <span class="project-tag">Commercial</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 — UCSD Low Voltage -->
+      <div class="project-card fade-in" data-category="cabling">
+        <div class="project-thumb">
+          <span class="project-cat">Structured Cabling</span>
+          <img src="assets/images/cabling-new.png" alt="UCSD Medical Center Low Voltage" />
+        </div>
+        <div class="project-info">
+          <div class="project-client">UCSD Medical Center</div>
+          <h3>Low Voltage Infrastructure — Medical Campus</h3>
+          <p>Structured cabling, fiber optic, and low-voltage systems work across UCSD's medical campus and Skaggs School of Pharmacy. Projects include IDF/MDF infrastructure, Cat6A horizontal cabling, and fiber backbone runs to support clinical systems.</p>
+          <div class="project-tags">
+            <span class="project-tag">Cat6A</span>
+            <span class="project-tag">Fiber Optic</span>
+            <span class="project-tag">Healthcare / Education</span>
+            <span class="project-tag">IDF/MDF</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12 — GenMark Diagnostics -->
+      <div class="project-card fade-in" data-category="access-control">
+        <div class="project-thumb">
+          <span class="project-cat">Access Control</span>
+          <img src="assets/images/access-control-overlay.png" alt="GenMark Diagnostics C-CURE" />
+        </div>
+        <div class="project-info">
+          <div class="project-client">GenMark Diagnostics</div>
+          <h3>C•CURE 9000 SSA &amp; Access Control — Life Sciences</h3>
+          <p>Multi-phase access control installation and Software Support Agreement (SSA) for GenMark's diagnostics facility. Scope included C•CURE 9000 platform configuration, door controller installation, and credential management for lab and restricted areas.</p>
+          <div class="project-tags">
+            <span class="project-tag">C•CURE 9000</span>
+            <span class="project-tag">SSA</span>
+            <span class="project-tag">Life Sciences</span>
+            <span class="project-tag">Lab Security</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /projects-grid -->
+  </div>
+</section>
+
+<!-- ── CTA Banner ─────────────────────────────────────────── -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Have a Project in Mind?</h2>
+    <p>Our team is experienced across healthcare, government, transit, education, and commercial sectors. Let's talk about what you need.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-paper-plane"></i> Request a Consultation</a>
+      <a href="services.html" class="btn btn-outline btn-lg"><i class="fa-solid fa-list"></i> View Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/nsw-logo.png" alt="NSW Integrated Systems" class="footer-logo" />
+        <p class="footer-tagline">Integrated Security. Intelligent Solutions.<br>San Diego, CA — Serving Southern California.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#access-control">Access Control</a></li>
+          <li><a href="services.html#video">Video Surveillance</a></li>
+          <li><a href="services.html#av">Audio / Visual</a></li>
+          <li><a href="services.html#cabling">Structured Cabling</a></li>
+          <li><a href="services.html#ai">AI Analytics</a></li>
+          <li><a href="services.html#sound">Sound &amp; Signal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>4440 Rainier Ave, Suite 210<br>San Diego, CA 92120</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span>(619) 528-2880</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>info@nswinc.com</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 NSW Integrated Systems. All rights reserved. | C-10 #844497 | ACO #6116 | DAS-7</span>
+      <span><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
